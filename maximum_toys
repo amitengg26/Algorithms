@@ -1,0 +1,30 @@
+//JavaScript Algorithm: Maximum Toys
+// Problem can be how many toys you can buy with X amount
+// Input will be an array of prices of toys 
+// maximum amount that can be spent
+
+// BELOW IS ARRAY OF PRICES OF TOYS
+const array = [9,3,1,2,3,4,5,6];
+// from above array we can buy 4 toys at max
+
+//lets sort the array in ascending order
+const sortedArray = array.sort(function(a,b){
+	return a-b;
+})
+
+// now loop through array ES5 syantax
+let spent = 0, toys = 0, totalAmount = 12;
+for(let i =0; i < sortedArray.length; i++ ){
+	spent = spent + sortedArray[i];
+  if(spent <= totalAmount){
+  	toys++;
+  }
+}
+// ES6 syntax
+/*sortedArray.map( (sorted,index) => {
+	spent = spent + sortedArray[index];
+  if(spent <= totalAmount){
+  	toys++;
+  }
+})*/
+console.log(toys)
